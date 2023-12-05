@@ -5,7 +5,7 @@ clock_t start,stop;
 double duration;
 #define MAXN 10
 #define MAXK 1e7//循环次数，解决运行单次速度过快导致无法计数
-//∑i~10 i*x^i
+//∑i=1~10 i*x^i
 /*秦九韶多项式*/
 double f1( int n, double a[], double x ){
 	int i;
@@ -32,7 +32,7 @@ void interval(double (*f)(int n, double a[], double x)){
 	for(int i = 0; i < MAXK; i++) f(MAXN-1, a, 1.1);
 	stop = clock();
 
-	duration = ((double)(stop - start))/CLK_TCK/MAXK;
+	duration = ((double)(stop - start))/CLOCKS_PER_SEC/MAXK;
 	printf("ticks = %f\n",(double)(stop - start));
 	printf("duration = %6.2e\n",duration);
 }
