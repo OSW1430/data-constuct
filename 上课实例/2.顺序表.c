@@ -31,7 +31,7 @@ void Insert(ElmentaryType X, int i, List Ptrl){
         printf("表满了无法插入");
         return;
     }
-    if(i < 1 || i > MAXSIZE){
+    if(i < 1 || i > Ptrl->Last + 2){
         printf("位置不合法");
         return;
     }
