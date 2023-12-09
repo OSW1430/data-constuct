@@ -118,4 +118,5 @@ int main(){
         printf("是\n");
     }
     else printf("否");
+    return 0;
 }
