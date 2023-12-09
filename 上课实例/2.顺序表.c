@@ -73,4 +73,5 @@ int main(){
     printf("%d ",Find(3,list));
     Delete(1,list);
     Print(list);
+    return 0;
 }
