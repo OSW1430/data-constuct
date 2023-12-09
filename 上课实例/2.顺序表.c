@@ -1,11 +1,11 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 #define MAXSIZE 10
 
 typedef struct LNode *List;
-typedef int ElmentaryType;//设置元素类型为int
+typedef int ElementaryType;//设置元素类型为int
 struct LNode{
-    ElmentaryType Data[MAXSIZE];
+    ElementaryType Data[MAXSIZE];
     int Last;//指向最后一个元素，范围[0,n-1]
 };
 
@@ -17,7 +17,7 @@ List MakeEmpty(){
     return PtrL;
 }
 //查找
-int Find(ElmentaryType X, List Ptrl){
+int Find(ElementaryType X, List Ptrl){
     int i = 0;
     while(i < Ptrl->Last && X != Ptrl->Data[i]){
         i++;
@@ -26,7 +26,7 @@ int Find(ElmentaryType X, List Ptrl){
     else return -1;
 }
 //插入 i代表要插入的位置 范围[1,n+1],n+1即在尾部添加一个元素
-void Insert(ElmentaryType X, int i, List Ptrl){
+void Insert(ElementaryType X, int i, List Ptrl){
     if(Ptrl->Last == MAXSIZE - 1){
         printf("表满了无法插入");
         return;
@@ -67,8 +67,8 @@ void Print(List Ptrl){
 int main(){
     List list = MakeEmpty();
     Insert(3,1,list);
-    Insert(4,2,list);
-    Insert(5,3,list);
+    Insert(4,3,list);
+    Insert(5,2,list);
     Print(list);
     printf("%d ",Find(3,list));
     Delete(1,list);
