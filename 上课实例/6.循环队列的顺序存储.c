@@ -8,6 +8,7 @@ struct QNode{
     int front;//指向队头的前一位
     int rear;//指向队尾
 };
+//初始化队列
 Quene CreatQuene(){
     Quene Q = (Quene)malloc(sizeof(struct QNode));
     Q->front = 0;//循环队列 初始化front和rear为数组第一个元素的下标
@@ -33,6 +34,7 @@ void AddQuene(Quene PtrQ, ElmentaryType item){
         PtrQ->Data[PtrQ->rear] = item;
     }
 }
+//出队
 ElmentaryType DeleteQuene(Quene PtrQ){
     if(isEmpty(PtrQ)){
         printf("队列为空\n");
